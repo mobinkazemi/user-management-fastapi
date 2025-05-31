@@ -3,8 +3,8 @@ from db.database import Base, engine
 from shared.models.base_model import BaseDBModel
 
 
-class AppConfig(Base, BaseDBModel):
-    __tablename__ = "appConfig"
+class UserConfig(Base, BaseDBModel):
+    __tablename__ = "userConfig"
 
     id = Column(Integer, primary_key=True, index=True)
     expirePasswordDays = Column(Integer, nullable=True, default=90)

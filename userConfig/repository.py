@@ -3,9 +3,9 @@ from shared.repository.baseRepository import BaseRepository
 from . import model
 
 
-class AppConfigRepository(BaseRepository):
+class UserConfigRepository(BaseRepository):
     def __init__(self) -> None:
-        super().__init__(model.AppConfig)
+        super().__init__(model.UserConfig)
 
     def getExpirePasswordDays(self) -> int | None:
         """

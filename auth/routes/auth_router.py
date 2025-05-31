@@ -5,7 +5,7 @@ from auth.functions.create_token import create_access_token
 from shared.dto.response.api_responseDto import SuccessResponseDto
 from users.repository import UserRepository
 import datetime
-from appConfig.repository import AppConfigRepository
+from userConfig.repository import UserConfigRepository
 from shared.classes.password_manager import PasswordManager as PW
 from shared.classes.User_Session_Manager import UserSessionManager as USManager
 from auth.functions.get_user_or_error import get_user_or_error
@@ -15,7 +15,7 @@ from auth.functions.login_handler import finalizeLogin
 
 router = APIRouter()
 userRepo = UserRepository()
-appConfigRepo = AppConfigRepository()
+userConfigRepo = UserConfigRepository()
 passwordManager = PW()
 userSessionManager = USManager()
 

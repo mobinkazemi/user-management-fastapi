@@ -2,13 +2,13 @@ from fastapi import HTTPException
 from users.repository import UserRepository
 from passlib.hash import pbkdf2_sha256
 from passlib.hash import pbkdf2_sha256
-from appConfig.repository import AppConfigRepository
+from userConfig.repository import UserConfigRepository
 
 from datetime import datetime, timezone, timedelta
 
 
 userRepo = UserRepository()
-appConfigRepo = AppConfigRepository()
+userConfigRepo = UserConfigRepository()
 
 
 class PasswordManager:
@@ -86,13 +86,13 @@ class PasswordManager:
             expireDays = user["expirePasswordDays"]
 
         else:
-            expireDays = appConfigRepo.getExpirePasswordDays()
+            expireDays = userConfigRepo.getExpirePasswordDays()
 
         if user.get("passwordAdvantageDays", None) != None:
             expireAdvantage = user["passwordAdvantageDays"]
 
         else:
-            expireAdvantage = appConfigRepo.getPasswordAdvantageDays()
+            expireAdvantage = userConfigRepo.getPasswordAdvantageDays()
 
         now_utc = datetime.now(timezone.utc)
 

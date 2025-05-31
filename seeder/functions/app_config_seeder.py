@@ -1,13 +1,13 @@
-from appConfig.repository import AppConfigRepository
+from userConfig.repository import UserConfigRepository
 
-appConfigRepo = AppConfigRepository()
+userConfigRepo = UserConfigRepository()
 
 
-def app_config_seeder():
-    currentConfigs = appConfigRepo.findAll()
+def user_config_seeder():
+    currentConfigs = userConfigRepo.findAll()
 
     if currentConfigs:
-        print("AppConfig already exists, skipping seeder.")
+        print("UserConfig already exists, skipping seeder.")
         return
-    print("Creating AppConfig...")
-    appConfigRepo.createOne({"expirePasswordDays": 90, "passwordAdvantageDays": 3})
+    print("Creating UserConfig...")
+    userConfigRepo.createOne({"expirePasswordDays": 90, "passwordAdvantageDays": 3})
