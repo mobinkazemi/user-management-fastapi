@@ -1,0 +1,10 @@
+def sendSMS(cellphone: str, message: str):
+    print("\n\n\n")
+    print("#########################################")
+    print("SEND SMS FUNCTION NOT IMPLEMENTED AT:\nshared > functions > send_sms.py")
+    print("#########################################")
+    print("#\t\t\t\t\t#\n")
+    print(f"#\t\t{cellphone}\t\t#\n")
+    print("#\t\t\t\t\t#\n")
+    print(message)
+    print("#########################################\n\n\n")
